@@ -2,74 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bill K Official — Worship is Lifestyle. Music, ministry, events and booking.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>Bill K Official | Worship is Lifestyle</title>
-  <link rel="icon" href="assets/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bill K Official — Admin</title>
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="#home" aria-label="Bill K Official home"><img src="assets/logo.png" alt="Bill K Official logo"></a>
-  <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#home">Home</a><a href="#music">Music</a><a href="#ministry">Ministry</a><a href="#journey">The Journey</a><a href="#booking">Booking</a>
-  </nav>
-</header>
-
-<main>
-<section id="home" class="hero">
-  <div class="hero-bg"></div><div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="eyebrow">BILL K OFFICIAL</p>
-    <h1>Worship<br><span>is lifestyle.</span></h1>
-    <p class="hero-copy">Music, testimony and ministry centered on Jesus Christ.</p>
-    <div class="hero-actions"><a class="btn primary" href="#music">Explore the music</a><a class="btn ghost" href="#booking">Book Bill K</a></div>
-    <p class="verse">“But as for me and my house, we will serve the Lord.” <strong>— Joshua 24:15</strong></p>
+  <div id="loginView" class="auth-wrap">
+    <div class="auth-card">
+      <div class="brand">BILL K <span>OFFICIAL</span></div>
+      <p class="muted">Artist Hub Administration</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" required autocomplete="username"></label>
+        <label>Password<input id="password" type="password" required autocomplete="current-password"></label>
+        <button class="primary" type="submit">Sign in</button>
+        <button id="resetBtn" class="link-btn" type="button">Forgot password?</button>
+        <p id="loginMsg" class="message"></p>
+      </form>
+    </div>
   </div>
-</section>
 
-<section class="intro section">
-  <div class="section-label">THE HEART</div>
-  <div><h2>A worship journey through music.</h2><p>Bill K Official is a gospel music and ministry platform sharing songs, stories and moments that point people back to God.</p></div>
-</section>
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand">BILL K <span>OFFICIAL</span></div>
+      <nav id="nav">
+        <button data-section="dashboard">Dashboard</button>
+        <button data-section="site">Site Settings</button>
+        <button data-section="music">Music</button>
+        <button data-section="albums">Albums</button>
+        <button data-section="videos">Videos</button>
+        <button data-section="events">Events & Tickets</button>
+        <button data-section="ministry">Ministry</button>
+        <button data-section="gallery">Gallery</button>
+        <button data-section="about">About / Bio</button>
+        <button data-section="socials">Social Media</button>
+      </nav>
+      <button id="logoutBtn" class="logout">Sign out</button>
+    </aside>
 
-<section id="music" class="section dark-section">
-  <div class="section-head"><div><div class="section-label">MUSIC</div><h2>Listen & discover</h2></div><a class="text-link" href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Open Spotify ↗</a></div>
-  <div class="music-grid">
-    <article class="music-card featured"><img src="assets/testimony-of-grace.jpg" alt="Testimony of Grace album cover"><div class="card-body"><span>ALBUM</span><h3>Testimony of Grace</h3><p>A testimony carried through sound, faith and gratitude.</p><div class="links"><a href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Spotify</a><a href="https://www.boomplay.com/share/artist/129768499" target="_blank" rel="noopener">Boomplay</a><a href="https://audiomack.com/billkofficial" target="_blank" rel="noopener">Audiomack</a></div></div></article>
-    <article class="music-card"><img src="assets/mulokole.jpg" alt="Mulokole single cover"><div class="card-body"><span>SINGLE</span><h3>Mulokole</h3><p>A gospel sound with a bold, joyful visual identity.</p><div class="links"><a href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Listen</a><a href="https://audiomack.com/billkofficial" target="_blank" rel="noopener">Audiomack</a></div></div></article>
-    <article class="music-card"><img src="assets/the-journey.jpg" alt="The Journey EP cover"><div class="card-body"><span>EP</span><h3>The Journey</h3><p>A six-track project marking another chapter in the journey.</p><div class="links"><a href="https://www.youtube.com/@billkofficial" target="_blank" rel="noopener">YouTube</a><a href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Spotify</a></div></div></article>
+    <main class="main">
+      <header class="topbar">
+        <div><strong id="sectionTitle">Dashboard</strong><span id="userEmail"></span></div>
+        <a href="../" target="_blank" class="view-site">View website ↗</a>
+      </header>
+
+      <section id="dashboard" class="section active">
+        <div class="hero"><h1>Welcome back, Bill K Official.</h1><p>Manage your artist hub without editing code.</p></div>
+        <div id="stats" class="stats"></div>
+        <div class="panel"><h2>Quick actions</h2><div class="quick">
+          <button data-go="music">＋ Add song</button><button data-go="albums">＋ Add album</button>
+          <button data-go="videos">＋ Add video</button><button data-go="events">＋ Add event</button>
+        </div></div>
+      </section>
+
+      <section id="site" class="section"><div class="panel"><h2>Site Settings</h2><form id="siteForm" class="form-grid">
+        <label>Artist name<input name="artistName"></label><label>Slogan<input name="slogan"></label>
+        <label>Scripture<input name="scripture"></label><label>Hero title<input name="heroTitle"></label>
+        <label class="wide">Hero text<textarea name="heroText"></textarea></label>
+        <label>Booking WhatsApp<input name="whatsapp"></label><label>Booking phone<input name="phone"></label>
+        <label>Booking email<input name="email"></label><label>Profile image URL<input name="profileImage"></label>
+        <label class="wide">Featured announcement<textarea name="announcement"></textarea></label>
+        <div class="wide"><button class="primary" type="submit">Save site settings</button><span id="siteMsg" class="message"></span></div>
+      </form></div></section>
+
+      <section id="music" class="section"><div class="panel"><div class="section-head"><h2>Music</h2><button class="primary" data-add="songs">＋ Add song</button></div><div id="songsList" class="cards"></div></div></section>
+      <section id="albums" class="section"><div class="panel"><div class="section-head"><h2>Albums / EPs</h2><button class="primary" data-add="albums">＋ Add album</button></div><div id="albumsList" class="cards"></div></div></section>
+      <section id="videos" class="section"><div class="panel"><div class="section-head"><h2>Videos</h2><button class="primary" data-add="videos">＋ Add video</button></div><div id="videosList" class="cards"></div></div></section>
+      <section id="events" class="section"><div class="panel"><div class="section-head"><h2>Events & Tickets</h2><button class="primary" data-add="events">＋ Add event</button></div><div id="eventsList" class="cards"></div></div></section>
+      <section id="ministry" class="section"><div class="panel"><div class="section-head"><h2>Ministry</h2><button class="primary" data-add="ministry">＋ Add ministry item</button></div><div id="ministryList" class="cards"></div></div></section>
+      <section id="gallery" class="section"><div class="panel"><div class="section-head"><h2>Gallery</h2><button class="primary" data-add="gallery">＋ Add photo</button></div><div id="galleryList" class="cards"></div></div></section>
+      <section id="about" class="section"><div class="panel"><h2>About / Biography</h2><form id="aboutForm">
+        <label>Biography<textarea name="bio" rows="12"></textarea></label>
+        <button class="primary" type="submit">Save biography</button><span id="aboutMsg" class="message"></span>
+      </form></div></section>
+      <section id="socials" class="section"><div class="panel"><h2>Social Media</h2><form id="socialForm" class="form-grid">
+        <label>YouTube<input name="youtube"></label><label>TikTok<input name="tiktok"></label>
+        <label>Instagram<input name="instagram"></label><label>Facebook<input name="facebook"></label>
+        <label>Spotify<input name="spotify"></label><label>Apple Music<input name="appleMusic"></label>
+        <label>Boomplay<input name="boomplay"></label><label>Audiomack<input name="audiomack"></label>
+        <div class="wide"><button class="primary" type="submit">Save social links</button><span id="socialMsg" class="message"></span></div>
+      </form></div></section>
+    </main>
   </div>
-</section>
 
-<section id="journey" class="journey section">
-  <div class="journey-art"><img src="assets/the-journey.jpg" alt="The Journey EP artwork"></div>
-  <div class="journey-copy"><div class="section-label">THE JOURNEY EP</div><h2>One chapter. Six songs. One continuing story.</h2><p>The Journey brings together <strong>Atunaaza, Akola, Kulwange, Sing to the Lord, Nasinga</strong> and <strong>Nsinza</strong>.</p><a class="btn primary" href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Listen on Spotify</a></div>
-</section>
+  <dialog id="editor">
+    <form method="dialog" id="editorForm" class="dialog-card">
+      <div class="section-head"><h2 id="editorTitle">Edit</h2><button type="button" id="closeEditor">×</button></div>
+      <div id="editorFields" class="form-grid"></div>
+      <div class="dialog-actions"><button type="button" id="cancelEditor">Cancel</button><button class="primary" type="submit">Save</button></div>
+      <p id="editorMsg" class="message"></p>
+    </form>
+  </dialog>
 
-<section id="ministry" class="section ministry">
-  <div class="section-label">MINISTRY</div><h2>Worship is more than a song.</h2><div class="ministry-grid"><div><span>01</span><h3>Worship</h3><p>Creating spaces where people can turn their hearts toward God.</p></div><div><span>02</span><h3>Music</h3><p>Gospel music that carries testimony, joy, reflection and faith.</p></div><div><span>03</span><h3>Community</h3><p>Connecting with people through live moments, media and shared faith.</p></div></div>
-</section>
-
-<section class="video section dark-section">
-  <div class="section-head"><div><div class="section-label">WATCH</div><h2>On YouTube</h2></div><a class="text-link" href="https://youtube.com/@billkofficial" target="_blank" rel="noopener">Visit channel ↗</a></div>
-  <a class="youtube-card" href="https://youtube.com/@billkofficial" target="_blank" rel="noopener"><div class="play">▶</div><div><span>BILL K OFFICIAL</span><h3>Music • Worship • Ministry</h3><p>Watch the latest videos on the official YouTube channel.</p></div></a>
-</section>
-
-<section id="booking" class="booking section">
-  <div class="booking-copy"><div class="section-label">BOOKING</div><h2>Bring Bill K to your next worship moment.</h2><p>For concerts, worship nights, church events and ministry engagements, get in touch directly.</p></div>
-  <div class="contact-list"><a href="https://wa.me/256767274916" target="_blank" rel="noopener"><span>WhatsApp</span><strong>+256 767 274 916</strong></a><a href="tel:+255757063380"><span>Phone</span><strong>+255 757 063 380</strong></a><a href="mailto:billkofficialmusic@gmail.com"><span>Email</span><strong>billkofficialmusic@gmail.com</strong></a></div>
-</section>
-
-<section class="social section dark-section"><div class="section-label">FOLLOW</div><h2>Stay connected.</h2><div class="social-grid"><a href="https://youtube.com/@billkofficial" target="_blank" rel="noopener">YouTube <span>↗</span></a><a href="https://www.tiktok.com/@billkofficialmusic" target="_blank" rel="noopener">TikTok <span>↗</span></a><a href="https://www.instagram.com/billkofficialug" target="_blank" rel="noopener">Instagram <span>↗</span></a><a href="https://www.facebook.com/profile.php?id=61594623123067" target="_blank" rel="noopener">Facebook <span>↗</span></a><a href="https://open.spotify.com/artist/0HHxFp7zcsu4s57UfZYPvF" target="_blank" rel="noopener">Spotify <span>↗</span></a><a href="https://www.boomplay.com/share/artist/129768499" target="_blank" rel="noopener">Boomplay <span>↗</span></a><a href="https://audiomack.com/billkofficial" target="_blank" rel="noopener">Audiomack <span>↗</span></a></div></section>
-</main>
-
-<footer><img src="assets/logo.png" alt="Bill K Official"><p>Worship is lifestyle.</p><small>© <span id="year"></span> Bill K Official. All rights reserved.</small><div style="margin-top:12px"><a href="admin/" style="font-size:10px;color:#777">Admin</a></div></footer>
-<script src="script.js"></script>
-<script type="module" src="js/public-content.js"></script>
-</body></html>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>
